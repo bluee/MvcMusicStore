@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/ng-table/1.0.0-beta.9/ng-table.css">
+
+</head>
+<body ng-app="app">
+    
+    <div class="container body-content">
+        <h2>MvcMusicStore</h2>
+        <br/>
+        @RenderBody()
+
+        <hr />
+        <footer>
+            <p style="text-align:right">Martin Staael</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/angular")
+    @RenderSection("scripts", required: false)
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ng-table/1.0.0-beta.9/ng-table.js"></script>
+
+    @* 
+       Note: For production use Grunt script to minimize and combine Angular scripts
+    *@
+    <script src="~/app/app.js"></script>
+    <script src="~/app/controllers/MainController.js"></script>
+    <script src="~/app/controllers/AlbumController.js"></script>
+    <script src="~/app/services/albumsRepository.js"></script>
+    <script src="~/app/services/artistRepository.js"></script>
+    <script src="~/app/services/genreRepository.js"></script>
+
+
+
+
+</body>
+</html>

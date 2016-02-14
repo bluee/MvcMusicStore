@@ -1,0 +1,34 @@
+﻿<form class="form-horizontal" id="addalbum">
+    <h3>Add Album</h3>
+    <div class="form-group">
+        <label for="inputTitle" class="col-sm-2 control-label">Title</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputTitle" ng-model="album.Title" placeholder="Title" required min-length="2" />
+        </div>
+
+        <label for="inputPrice" class="col-sm-2 control-label">Price</label>
+        <div class="col-sm-10">
+            <input class="form-control" id="inputPrice" ng-model="album.Price" placeholder="Price" required type="number" min="0" step="1" />
+        </div>
+
+        <label for="inputArtistId" class="col-sm-2 control-label">Artist</label>
+        <div class="col-sm-10">
+            <select ng-model="album.ArtistId" name="ArtistId" required
+                    ng-options="item.ArtistId as item.Name for item in data.Artist" class="form-control">
+                <option value="" selected>-- Select artist --</option>
+            </select>
+            <span class="field-validation-valid badge bg-danger" data-valmsg-for="ArtistId" data-valmsg-replace="true"></span>
+        </div>
+
+        <label for="inputGenreId" class="col-sm-2 control-label">Genre</label>
+        <div class="col-sm-10">
+            <select ng-model="album.GenreId" name="GenreId" required
+                    ng-options="item.GenreId as item.Name for item in data.Genre" class="form-control">
+                <option value="" selected>-- Select genre --</option>
+            </select>
+            <span class="field-validation-valid badge bg-danger" data-valmsg-for="GenreId" data-valmsg-replace="true"></span>
+        </div>
+        
+    </div>
+    <button type="button" class="btn btn-primary" ng-click="checkInput() && confirm('$save')">Save</button>
+</form>
